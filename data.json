@@ -463,9 +463,35 @@
             {
               "title": "lsfg_vk_multiplier",
               "env": "LSFGVK_MULTIPLIER",
-              "type": "value",
-              "valueKind": "number",
-              "defaultValue": "2"
+              "type": "enum",
+              "multiSelect": false,
+              "defaltValue": "2",
+              "values": [
+                {
+                  "title": "off",
+                  "value": "1"
+                },
+                {
+                  "title": "x2",
+                  "value": "2"
+                },
+                {
+                  "title": "x3",
+                  "value": "3"
+                },
+                {
+                  "title": "x4",
+                  "value": "4"
+                },
+                {
+                  "title": "x5",
+                  "value": "5"
+                },
+                {
+                  "title": "x6",
+                  "value": "6"
+                }
+              ]
             },
             {
               "title": "lsfg_vk_flow_scale",
@@ -1184,6 +1210,14 @@
         "nvidia_commands_driver_description": "Official NVIDIA driver variables from NVIDIA's gaming documentation. Unlike the entries above, they work with any Proton build."
       },
       "variables": {
+        "off": "Off",
+        "on": "On",
+        "x1": "x1",
+        "x2": "x2",
+        "x3": "x3",
+        "x4": "x4",
+        "x5": "x5",
+        "x6": "x6",
         "lsfg_vk": "Configure lsfg-vk",
         "lsfg_vk_disable": "Disable lsfg-vk",
         "lsfg_vk_multiplier": "Frame rate multiplier",
