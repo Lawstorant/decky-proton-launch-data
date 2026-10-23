@@ -443,8 +443,378 @@
         {
           "title": "optiscaler",
           "env": "PROTON_USE_OPTISCALER",
-          "type": "bool",
-          "value": "1"
+          "type": "enum",
+          "multiSelect": false,
+          "defaultValue": "1",
+          "values": [
+            {
+              "title": "Disabled",
+              "value": "0"
+            },
+            {
+              "title": "Enabled",
+              "value": "1"
+            },
+            {
+              "title": "nightly_wineland",
+              "value": "nightly"
+            }
+          ]
+        },
+        {
+          "title": "optiscaler_name",
+          "env": "PROTON_OPTISCALER_NAME",
+          "type": "enum",
+          "multiSelect": false,
+          "defaultValue": "dxgi.dll",
+          "values": [
+            {
+              "title": "dxgi.dll",
+              "value": "dxgi.dll"
+            },
+            {
+              "title": "d3d12.dll",
+              "value": "d3d12.dll"
+            },
+            {
+              "title": "dbghelp.dll",
+              "value": "dbghelp.dll"
+            }
+          ]
+        },
+        {
+          "title": "optiscaler_config",
+          "env": "PROTON_OPTISCALER_CONFIG",
+          "type": "compound",
+          "separator": ";",
+          "flags": [
+            {
+              "title": "DirectX 11 Upscaler",
+              "value": "Upscalers.Dx11Upscaler",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "fsr31",
+                "options": [
+                  {
+                    "title": "FSR 2.2",
+                    "value": "fsr22"
+                  },
+                  {
+                    "title": "FSR 3.1",
+                    "value": "fsr31"
+                  },
+                  {
+                    "title": "FSR 2.3; 3.1; 4.x (DX12 Interop)",
+                    "value": "ffx_12"
+                  },
+                  {
+                    "title": "XeSS",
+                    "value": "xess"
+                  },
+                  {
+                    "title": "XeSS (DX12 Interop)",
+                    "value": "xess_12"
+                  },
+                  {
+                    "title": "DLSS",
+                    "value": "dlss"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "DirectX 12 Upscaler",
+              "value": "Upscalers.Dx12Upscaler",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "auto",
+                "options": [
+                  {
+                    "title": "Auto",
+                    "value": "auto"
+                  },
+                  {
+                    "title": "FSR 2.2",
+                    "value": "fsr22"
+                  },
+                  {
+                    "title": "FSR 2.3; 3.1; 4.x",
+                    "value": "ffx"
+                  },
+                  {
+                    "title": "XeSS",
+                    "value": "xess"
+                  },
+                  {
+                    "title": "DLSS",
+                    "value": "dlss"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Vulkan Upscaler",
+              "value": "Upscalers.VulkanUpscaler",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "fsr22",
+                "options": [
+                  {
+                    "title": "FSR 2.2",
+                    "value": "fsr22"
+                  },
+                  {
+                    "title": "FSR 2.3; 3.1; 4.x",
+                    "value": "ffx"
+                  },
+                  {
+                    "title": "FSR 2.3; 3.1; 4.x (DX12 Interop)",
+                    "value": "ffx_12"
+                  },
+                  {
+                    "title": "XeSS",
+                    "value": "xess"
+                  },
+                  {
+                    "title": "DLSS",
+                    "value": "dlss"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "FSR 4 Model support",
+              "value": "FSR.Fsr4GpuSupport",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "0",
+                "options": [
+                  {
+                    "title": "Auto",
+                    "value": "0"
+                  },
+                  {
+                    "title": "FP8 (RDNA 4)",
+                    "value": "1"
+                  },
+                  {
+                    "title": "INT8 (RDNA 3)",
+                    "value": "2"
+                  },
+                  {
+                    "title": "INT8-2 (RDNA 2)",
+                    "value": "3"
+                  },
+                  {
+                    "title": "INT8 Lite (APU)",
+                    "value": "4"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "FSR 4 Model",
+              "value": "FSR.Fsr4Model",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "0",
+                "options": [
+                  {
+                    "title": "Auto",
+                    "value": "auto"
+                  },
+                  {
+                    "title": "FP8",
+                    "value": "0"
+                  },
+                  {
+                    "title": "INT8",
+                    "value": "1"
+                  },
+                  {
+                    "title": "INT8-2",
+                    "value": "2"
+                  },
+                  {
+                    "title": "INT8 Lite",
+                    "value": "3"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Frame Generation",
+              "value": "FrameGen.Enabled",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "false",
+                "options": [
+                  {
+                    "title": "False",
+                    "value": "false"
+                  },
+                  {
+                    "title": "True",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "FrameGen Input",
+              "value": "FrameGen.FGInput",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "nofg",
+                "options": [
+                  {
+                    "title": "No FG",
+                    "value": "nofg"
+                  },
+                  {
+                    "title": "From Upscaler",
+                    "value": "upscaler"
+                  },
+                  {
+                    "title": "DLSS-G",
+                    "value": "dlssg"
+                  },
+                  {
+                    "title": "DLSS FG Enabler",
+                    "value": "nvngxfg"
+                  },
+                  {
+                    "title": "FSR FG",
+                    "value": "fsrfg"
+                  },
+                  {
+                    "title": "FSR 3 FG (older)",
+                    "value": "fsrfg30"
+                  },
+                  {
+                    "title": "xefg",
+                    "value": "xefg"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "FrameGen Output",
+              "value": "FrameGen.FGOutput",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "nofg",
+                "options": [
+                  {
+                    "title": "No FG",
+                    "value": "nofg"
+                  },
+                  {
+                    "title": "FSR FG",
+                    "value": "fsrfg"
+                  },
+                  {
+                    "title": "XeFG",
+                    "value": "xefg"
+                  },
+                  {
+                    "title": "DLSS-G",
+                    "value": "dlssg"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "DLSS FG Enabler",
+              "value": "FrameGen.FGNvngxReplacement",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "Nukems",
+                "options": [
+                  {
+                    "title": "None",
+                    "value": "None"
+                  },
+                  {
+                    "title": "Nukems",
+                    "value": "Nukems"
+                  },
+                  {
+                    "title": "Arturs",
+                    "value": "Arturs"
+                  },
+                  {
+                    "title": "FFX",
+                    "value": "FFX"
+                  },
+                  {
+                    "title": "Combo",
+                    "value": "Combo"
+                  },
+                  {
+                    "title": "HelixSR",
+                    "value": "HelixSR"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Extend Upscale Ratio (6x)",
+              "value": "Menu.ExtendLimits",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "true",
+                "options": [
+                  {
+                    "title": "False",
+                    "value": "false"
+                  },
+                  {
+                    "title": "True",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "OptiScaler Menu",
+              "value": "Menu.ShortcutKey",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "0x2D",
+                "options": [
+                  {
+                    "title": "Insert",
+                    "value": "0x2D"
+                  },
+                  {
+                    "title": "End",
+                    "value": "0x23"
+                  },
+                  {
+                    "title": "Home",
+                    "value": "0x24"
+                  },
+                  {
+                    "title": "Backspace",
+                    "value": "0x08"
+                  },
+                  {
+                    "title": "F12",
+                    "value": "0x7B"
+                  },
+                  {
+                    "title": "F8",
+                    "value": "0x77"
+                  },
+                  {
+                    "title": "F4",
+                    "value": "0x73"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -1150,6 +1520,9 @@
         "dxvk_low_latency": "DXVK Low Latency",
         "low_latency_layer": "Low Latency Layer",
         "optiscaler": "OptiScaler (Proton)",
+        "nightly_wineland": "Latest Nightly (Proton Wineland)",
+        "optiscaler_name": "OptiScaler .dll Name",
+        "optiscaler_config": "OptiScaler Configuration",
         "radv_perftest": "RADV PerfTest",
         "radv_perftest_aco": "RADV PerfTest ACO",
         "radv_perftest_gpl": "RADV PerfTest GPL",
@@ -1814,6 +2187,9 @@
         "dxvk_low_latency": "DXVK Niska Latencja",
         "low_latency_layer": "Warstwa Niskiej Latencji",
         "optiscaler": "OptiScaler (Proton)",
+        "nightly_wineland": "Najnowsze Nightly (Proton Wineland)",
+        "optiscaler_name": "Nazwa .dll OptiScalera",
+        "optiscaler_config": "Konfiguracja OptiScalera",
         "radv_perftest": "RADV PerfTest",
         "radv_perftest_aco": "RADV PerfTest ACO",
         "radv_perftest_gpl": "RADV PerfTest GPL",
