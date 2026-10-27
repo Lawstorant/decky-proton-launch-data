@@ -617,7 +617,7 @@
               "value": "FSR.Fsr4Model",
               "companion": {
                 "kind": "enum",
-                "defaultValue": "0",
+                "defaultValue": "auto",
                 "options": [
                   {
                     "title": "Auto",
@@ -692,7 +692,7 @@
                     "value": "fsrfg30"
                   },
                   {
-                    "title": "xefg",
+                    "title": "XeFG",
                     "value": "xefg"
                   }
                 ]
