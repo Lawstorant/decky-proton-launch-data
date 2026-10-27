@@ -777,7 +777,43 @@
               }
             },
             {
-              "title": "OptiScaler Menu",
+              "title": "Nvidia GPU Spoofing (DirectX)",
+              "value": "Spoofing.Dxgi",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "true",
+                "options": [
+                  {
+                    "title": "False",
+                    "value": "false"
+                  },
+                  {
+                    "title": "True",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Nvidia GPU Spoofing (Vulkan)",
+              "value": "Spoofing.Vulkan",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "true",
+                "options": [
+                  {
+                    "title": "False",
+                    "value": "false"
+                  },
+                  {
+                    "title": "True",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "OptiScaler Menu Key",
               "value": "Menu.ShortcutKey",
               "companion": {
                 "kind": "enum",
