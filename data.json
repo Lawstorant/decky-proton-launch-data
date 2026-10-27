@@ -1183,7 +1183,7 @@
         },
         {
           "title": "nvapi",
-          "env": "PROTON_ENABLE_NVAPI",
+          "env": "PROTON_FORCE_NVAPI",
           "type": "bool",
           "value": "1"
         },
