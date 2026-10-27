@@ -617,7 +617,7 @@
               "value": "FSR.Fsr4Model",
               "companion": {
                 "kind": "enum",
-                "defaultValue": "0",
+                "defaultValue": "auto",
                 "options": [
                   {
                     "title": "Auto",
@@ -692,7 +692,7 @@
                     "value": "fsrfg30"
                   },
                   {
-                    "title": "xefg",
+                    "title": "XeFG",
                     "value": "xefg"
                   }
                 ]
@@ -759,18 +759,18 @@
               }
             },
             {
-              "title": "Extend Upscale Ratio (6x)",
-              "value": "Menu.ExtendLimits",
+              "title": "Upscale ratio limits",
+              "value": "Menu.ExtendedLimits",
               "companion": {
                 "kind": "enum",
-                "defaultValue": "true",
+                "defaultValue": "false",
                 "options": [
                   {
-                    "title": "False",
+                    "title": "1.0 - 3.0",
                     "value": "false"
                   },
                   {
-                    "title": "True",
+                    "title": "0.1 - 6.0",
                     "value": "true"
                   }
                 ]
